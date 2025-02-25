@@ -26,9 +26,34 @@
     </div>
 
     <div class="legend"></div>
+
     <div class="clock-chart"></div>
+    <br>
+    <button id="explanation-btn">Explain Graph</button>
     
   </div>
+  <!-- Explanation overlay (initially hidden) -->
+  <div id="explanation-overlay" class="hidden">
+    <h3>Motivation & Target Audience</h3>
+    <p>Our interactive data visualization deploys a radial graph to explore the circadian rhythms of mice, aiming to answer two key questions:</p>
+      <ul>
+        <li>What is the relationship between temperature and activity?</li>
+        <li>How does gender influence this relationship?</li>
+      </ul>
+    <p>Understanding circadian rhythms is crucial in biological research, as they impact metabolism, sleep cycles, and behavioral patterns. Our project is designed for researchers, students, and biologists who study circadian biology, helping them visualize and compare hourly temperature and activity trends across male and female mice.</p>
+
+
+    <h3>Design Rationale</h3>
+    <p>Since time is cyclical, we chose a radial (polar) chart to represent the 24-hour rhythm of mouse activity and temperature. We visualize each of the four mouse data CSV files into four graphs of hourly activity and hourly temperature of the female and male mice. Initially, we considered using a line chart or heatmap, as we did in Project 2, but we quickly realized that these formats didn’t effectively convey the periodic nature of the data. A radial chart better illustrates daily patterns and fluctuations. 
+    Each mouse is assigned a unique color, making it easier to distinguish between them. We added several interactive features to enhance usability:</p>
+    <ul>
+      <li>A button to switch between male and female datasets for easy comparison.</li>
+      <li>Another button to toggle between activity and temperature to focus on specific metrics.</li>
+      <li>A search bar to quickly locate a specific mouse.</li>
+      <li>Clickable mouse IDs that highlight a single observation over time.</li>
+    </ul>
+    <p>These features help users explore data at different levels, from high-level trends to individual mouse behaviors.</p>
+</div>
 
   <script src="script.js"></script>
 

@@ -364,3 +364,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 删除重复的init()调用
 // init();
+
+const explanationBtn = document.getElementById('explanation-btn');
+const explanationOverlay = document.getElementById('explanation-overlay');
+
+explanationBtn.addEventListener('click', function(e) {
+  e.stopPropagation(); // Prevent the click from propagating to the document.
+  explanationOverlay.classList.remove('hidden');
+});
+
+// Prevent clicks inside the overlay from closing it.
+explanationOverlay.addEventListener('click', function(e) {
+  e.stopPropagation();
+});
+
+// If clicking anywhere else on the document, hide the overlay.
+document.addEventListener('click', function() {
+  if (!explanationOverlay.classList.contains('hidden')) {
+    explanationOverlay.classList.add('hidden');
+  }
+});
